@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Batwing extends LiveObject {
-    private static final Image batwingIMG = new Image("Images/BatwingIMG.png");
+    private static final ImageView batwingIMG = new ImageView("Images/BatwingIMG.png");
     private static final int PLAYER_WIDTH = 40;
     private static final int PLAYER_HEIGHT = 20;
     private static final int LEVEL_1 = 25;
