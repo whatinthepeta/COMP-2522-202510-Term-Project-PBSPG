@@ -97,4 +97,13 @@ public class Batwing extends ImageView {
         });
         pause.play();
     }
+
+    /**
+     * Returns the image representing the Batwing.
+     *
+     * @return the ImageView of the Batwing
+     */
+    public ImageView getBatwingIMG() {
+        return this.batwingIMG;
+    }
 }
