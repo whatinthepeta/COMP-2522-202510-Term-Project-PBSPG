@@ -11,7 +11,6 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
-
 /**
  * Represents the Game Object.
  *
@@ -86,5 +85,24 @@ public class Game {
                 new BackgroundSize(BACKGROUND_HEIGHT, BACKGROUND_WIDTH, true, true, true, true)
         );
         gamePane.setBackground(new Background(fixBackgroundSize));
+    }
+
+    /**
+     * Updates status of balloon spawning, bullet movement,
+     * balloon movement, collision checks, scoreboard, and game updates.
+     *
+     * @param now the current time in nanoseconds
+     */
+    public void update(final long now) {
+        if (player.isAlive()) {
+            if (now - lastBalloonCreationTime > BALLOON_INTERVAL) {
+                createBalloonRow();
+                lastBalloonCreationTime = now;
+            }
+            updateBullets();
+            updateBalloons();
+            scoreBoard.update();
+            checkGameEnd();
+        }
     }
 }
