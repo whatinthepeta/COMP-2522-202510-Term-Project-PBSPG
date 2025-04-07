@@ -84,4 +84,13 @@ public class Balloon {
         return balloonFilePaths[randomIndex];
     }
 
+    /**
+     * Returns an ImageView object representing this Balloon's image.
+     *
+     * @return the ImageView of the balloon image
+     */
+    public ImageView getBalloonIMG() {
+        return balloonIMG;
+    }
+
 }
