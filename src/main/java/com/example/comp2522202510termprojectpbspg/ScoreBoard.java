@@ -64,4 +64,13 @@ public class ScoreBoard {
     public void loseLife() {
         lives--;
     }
+
+    /**
+     * Returns the current number of lives the Batwing has left.
+     *
+     * @return an int of the number of lives
+     */
+    public int getLives() {
+        return lives;
+    }
 }
