@@ -205,4 +205,17 @@ public class Game {
             balloonIterator.remove();
         }
     }
+
+    /**
+     * Creates a new row of balloons using the Balloons utility class and
+     * adds them to the game pane.
+     */
+    private void createBalloonRow() {
+        Balloon[] newRow = Balloons.createArmyOfBalloons(width, Game.ARM_OF_BALLOONS_START_POSITION, NUMBER_OF_BALLOON_ARMY);
+
+        for(Balloon balloon : newRow) {
+            balloons.add(balloon);
+            gamePane.getChildren().add(balloon.getBalloonIMG());
+        }
+    }
 }
