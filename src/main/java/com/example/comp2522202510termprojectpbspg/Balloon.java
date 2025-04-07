@@ -127,4 +127,13 @@ public class Balloon {
                 Double.compare(that.screenWidth, screenWidth) == 0;
     }
 
+    /**
+     * Returns a hashcode of type Balloon.
+     *
+     * @return a hashcode of type Balloon
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(balloonIMG, xVelocity, yVelocity, screenWidth);
+    }
 }
