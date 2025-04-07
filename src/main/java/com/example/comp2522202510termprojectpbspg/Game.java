@@ -185,4 +185,24 @@ public class Game {
     private boolean isBalloonOffScreen(final Balloon balloon) {
         return balloon.isOffScreen(height);
     }
+
+    /**
+     * Checks if a balloon hits the Batwing. If so, the player loses a life and the Batwing may respawn.
+     *
+     * @param balloon the {@code Balloon} being checked
+     * @param balloonIterator the iterator used to remove the balloon safely
+     */
+    private void checkBalloonHitBatwing(final Balloon balloon, final Iterator<Balloon> balloonIterator) {
+        boolean isHit = balloon.getBalloonIMG().getBoundsInParent().intersects(player.getBatwingIMG().getBoundsInParent());
+        if (player.isAlive() && isHit) {
+            player.dead();
+            scoreBoard.loseLife();
+
+            if (scoreBoard.getLives() > ZERO) {
+                player.respawn(BATWING_RESPAWN_TIME);
+            }
+            gamePane.getChildren().remove(balloon.getBalloonIMG());
+            balloonIterator.remove();
+        }
+    }
 }
