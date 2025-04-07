@@ -161,4 +161,13 @@ public class ScoreBoard {
             return this.peopleDead >= LOSE_BALLOONS_PASSED ? GameEndReason.TOO_MANY_PASSED : GameEndReason.GAME_ACTIVE;
         }
     }
+
+    /**
+     * Returns the Text object representing the scoreboard.
+     *
+     * @return a Text object representing the scoreboard
+     */
+    public Text getScoreBoard(){
+        return scoreBoard;
+    }
 }
