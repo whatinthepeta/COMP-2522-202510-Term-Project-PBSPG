@@ -80,4 +80,16 @@ public class GameController {
             isRunning = false;
         }
     }
+
+    /**
+     * Updates player movement based on pressed keys.
+     */
+    private void updatePlayerMovement() {
+        if (pressedKeys.contains(KeyCode.LEFT)) {
+            game.movePlayerLeft();
+        }
+        if (pressedKeys.contains(KeyCode.RIGHT)) {
+            game.movePlayerRight();
+        }
+    }
 }
