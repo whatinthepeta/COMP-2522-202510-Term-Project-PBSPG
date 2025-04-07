@@ -1,8 +1,10 @@
 package com.example.comp2522202510termprojectpbspg;
 
+import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+
 
 /**
  * Represents the Game Object.
@@ -34,4 +36,32 @@ public class Game {
     private boolean canShoot;
     private boolean gameOver;
     private long lastBalloonCreationTime;
+
+    /**
+     * Constructs a new Game object with the specified screen width and height.
+     * Initializes the game pane, player, background, scoreboard, and game state.
+     *
+     * @param width  a double the width of the game screen
+     * @param height a double the height of the game screen
+     */
+    public Game(final double width, final double height) {
+        this.width = width;
+        this.height = height;
+        this.gamePane = new Pane();
+        Map map = new Map();
+        this.constructMap(map);
+        this.player = new Batwing(width);
+        double startingXCalculation = width / HALF - this.player.getBatwingIMG().getFitWidth() / HALF;
+        double startingYCalculation = height - this.player.getBatwingIMG().getFitHeight() - TEN;
+        this.player.getBatwingIMG().setLayoutX(startingXCalculation);
+        this.player.getBatwingIMG().setLayoutY(startingYCalculation);
+        this.canShoot = true;
+        this.gameOver = false;
+        this.lastBalloonCreationTime = ZERO;
+        this.balloons = new ArrayList<>();
+        this.bullets = new ArrayList<>();
+        this.scoreBoard = new ScoreBoard();
+        gamePane.getChildren().add(this.player.getBatwingIMG());
+        gamePane.getChildren().add(scoreBoard.getScoreBoard());
+    }
 }
