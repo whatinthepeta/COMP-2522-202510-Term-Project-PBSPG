@@ -102,4 +102,13 @@ public class Balloon {
         balloonIMG.setLayoutX(x);
     }
 
+    /**
+     * Sets the Y position of the balloon on the game pane.
+     *
+     * @param y the Y-coordinate to place the balloon
+     */
+    public void setBalloonY(double y){
+        balloonIMG.setLayoutY(y);
+    }
+
 }
