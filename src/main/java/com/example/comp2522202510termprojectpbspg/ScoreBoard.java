@@ -41,4 +41,11 @@ public class ScoreBoard {
         scoreBoard.setText("Lives: " + lives + "\nBalloons: " +
                 balloonsShot + "\nPeople Killed: " + peopleDead);
     }
+
+    /**
+     * Increments the number of balloons shot by the player.
+     */
+    public void balloonShot() {
+        balloonsShot++;
+    }
 }
