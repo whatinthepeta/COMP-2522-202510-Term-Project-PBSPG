@@ -104,7 +104,7 @@ public class ScoreBoard {
      *
      * @param lives the number of lives being set
      */
-    public void setLives(int lives) {
+    public void setLives(final int lives) {
         this.lives = lives;
     }
 
@@ -113,7 +113,7 @@ public class ScoreBoard {
      *
      * @param peopleDead the number of people dead being set
      */
-    public void setPeopleDead(int peopleDead) {
+    public void setPeopleDead(final int peopleDead) {
         this.peopleDead = peopleDead;
     }
 
@@ -122,7 +122,7 @@ public class ScoreBoard {
      *
      * @param balloonsShot the number of balloons shot being set
      */
-    public void setBalloonsShot(int balloonsShot) {
+    public void setBalloonsShot(final int balloonsShot) {
         this.balloonsShot = balloonsShot;
     }
 
@@ -185,7 +185,7 @@ public class ScoreBoard {
      * @return true if they are equal, else false
      */
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         if (this == other) return true;
         if (other == null || getClass() != other.getClass()) return false;
         ScoreBoard that = (ScoreBoard) other;
