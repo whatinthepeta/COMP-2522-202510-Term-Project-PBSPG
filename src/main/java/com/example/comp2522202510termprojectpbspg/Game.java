@@ -247,4 +247,11 @@ public class Game {
     public void movePlayerLeft() {
         player.moveLeft();
     }
+
+    /**
+     * Moves the Batwing to the right.
+     */
+    public void movePlayerRight() {
+        player.moveRight();
+    }
 }
