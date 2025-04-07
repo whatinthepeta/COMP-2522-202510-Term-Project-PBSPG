@@ -295,4 +295,13 @@ public class Game {
     public Pane getGamePane() {
         return gamePane;
     }
+
+    /**
+     * Determines whether the game is over by checking the win or loss condition.
+     *
+     * @return true if the game is over, otherwise false
+     */
+    public boolean isGameOver() {
+        return gameOver;
+    }
 }
