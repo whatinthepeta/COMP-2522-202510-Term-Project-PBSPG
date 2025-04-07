@@ -31,7 +31,7 @@ public class Balloon {
      * @param screenWidth a double of the screen width
      * @throws IllegalArgumentException if imagePath is null, empty, or whitespace-only
      */
-    public Balloon(String imagePath, double screenWidth) {
+    public Balloon(final String imagePath, final double screenWidth) {
         if (imagePath == null || imagePath.isBlank()){
             throw new IllegalArgumentException("Image path cannot be null, empty, or whitespace.");
         }
@@ -53,7 +53,6 @@ public class Balloon {
         if (balloonIMG.getLayoutX() <= ZERO || balloonIMG.getLayoutX() + balloonIMG.getFitWidth() >= screenWidth) {
             xVelocity = -xVelocity;
         }
-
     }
 
     /**
@@ -62,7 +61,7 @@ public class Balloon {
      * @param screenHeight a double representing the height of the screen
      * @return true if the balloon is below the screen height, false otherwise
      */
-    public boolean isOffScreen(double screenHeight) {
+    public boolean isOffScreen(final double screenHeight) {
         return balloonIMG.getLayoutY() > screenHeight;
     }
 
@@ -98,7 +97,7 @@ public class Balloon {
      *
      * @param x the X-coordinate to place the balloon
      */
-    public void setBalloonX(double x){
+    public void setBalloonX(final double x){
         balloonIMG.setLayoutX(x);
     }
 
@@ -107,7 +106,7 @@ public class Balloon {
      *
      * @param y the Y-coordinate to place the balloon
      */
-    public void setBalloonY(double y){
+    public void setBalloonY(final double y){
         balloonIMG.setLayoutY(y);
     }
 
@@ -118,7 +117,7 @@ public class Balloon {
      * @return true if they are equal, else false
      */
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         if (this == other) return true;
         if (!(other instanceof Balloon that)) return false;
         return Objects.equals(balloonIMG, that.balloonIMG) &&
