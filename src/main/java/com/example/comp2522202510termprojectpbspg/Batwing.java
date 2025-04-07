@@ -142,4 +142,15 @@ public class Batwing extends ImageView {
     public int hashCode() {
         return Objects.hash(batwingIMG, alive, gameWidth);
     }
+
+    /**
+     * Returns a String of this Batwing.
+     *
+     * @return a String of this Batwing
+     */
+    @Override
+    public String toString() {
+        return "Batwing{batwingIMG='" + batwingIMG + "', alive='" + alive +
+                "', yVelocity=" + gameWidth +"}";
+    }
 }
