@@ -109,4 +109,14 @@ public class ScoreBoard {
     public void setPeopleDead(int peopleDead) {
         this.peopleDead = peopleDead;
     }
+
+    /**
+     * Sets the number of balloons the Batwing has popped.
+     *
+     * @param balloonsShot the number of balloons shot being set
+     */
+    public void setBalloonsShot(int balloonsShot) {
+        this.balloonsShot = balloonsShot;
+    }
+
 }
