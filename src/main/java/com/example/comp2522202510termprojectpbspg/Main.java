@@ -10,7 +10,7 @@ public class Main extends Application {
     private GameController gameController;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(final Stage primaryStage) {
         Game gameWorld = new Game(SCREEN_WIDTH, SCREEN_HEIGHT);
         gameWorld.loadGame();
         gameController = new GameController(gameWorld);
