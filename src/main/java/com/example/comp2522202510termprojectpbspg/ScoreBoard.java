@@ -73,4 +73,13 @@ public class ScoreBoard {
     public int getLives() {
         return lives;
     }
+
+    /**
+     * Returns the current number of people dead.
+     *
+     * @return an int of current number of people dead
+     */
+    public int getPeopleDead() {
+        return peopleDead;
+    }
 }
