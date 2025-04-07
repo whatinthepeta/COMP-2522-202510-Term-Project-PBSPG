@@ -198,4 +198,15 @@ public class ScoreBoard {
     public int hashCode() {
         return Objects.hash(lives, balloonsShot, peopleDead, scoreBoard);
     }
+
+    /**
+     * Returns a String of this ScoreBoard.
+     *
+     * @return a String of this ScoreBoard
+     */
+    @Override
+    public String toString() {
+        return "ScoreBoard{lives='" + lives + "', balloonsShot='" + balloonsShot +
+                "', peopleDead=" + peopleDead + ", scoreBoard=" + scoreBoard + "}";
+    }
 }
