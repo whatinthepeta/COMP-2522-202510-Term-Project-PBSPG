@@ -127,9 +127,9 @@ public class Batwing extends ImageView {
     public boolean equals(Object other) {
         if (this == other) return true;
         if (!(other instanceof Batwing that)) return false;
-        return Objects.equals(that.batwingIMG, batwingIMG) &&
-                alive == that.alive &&
-                Double.compare(that.gameWidth, gameWidth) == 0;
+        return alive == that.alive &&
+                Objects.equals(batwingIMG, that.batwingIMG) &&
+                Double.compare(gameWidth, that.gameWidth) == Double.compare(that.gameWidth, gameWidth);
     }
 
     /**
