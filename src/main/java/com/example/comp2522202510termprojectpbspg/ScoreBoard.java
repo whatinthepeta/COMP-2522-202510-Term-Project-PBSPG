@@ -127,4 +127,14 @@ public class ScoreBoard {
     public boolean hasWon() {
         return balloonsShot >= WIN_BALLOONS_SHOT;
     }
+
+    /**
+     * Determines if the player has lost the game by either losing all Batwing lives
+     * or allowing too many people to be killed.
+     *
+     * @return true if loss conditions are met, otherwise false
+     */
+    public boolean hasLost() {
+        return lives <= ZERO || peopleDead >= LOSE_BALLOONS_PASSED;
+    }
 }
