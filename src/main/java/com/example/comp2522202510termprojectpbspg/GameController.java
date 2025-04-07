@@ -13,4 +13,13 @@ public class GameController {
     private final Set<KeyCode> pressedKeys = new HashSet<>();
     private AnimationTimer gameLoop;
     private boolean isRunning = false;
+
+    /**
+     * Constructs a GameController object.
+     *
+     * @param game The game instance to control
+     */
+    public GameController(Game game) {
+        this.game = game;
+    }
 }
