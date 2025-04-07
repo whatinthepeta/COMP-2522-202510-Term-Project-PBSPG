@@ -48,4 +48,13 @@ public class ScoreBoard {
     public void balloonShot() {
         balloonsShot++;
     }
+
+    /**
+     * Increases the number of people dead by a randomized amount between 50 and 100
+     * everytime a balloon passes the Batwing.
+     */
+    public void balloonPassed() {
+        int passedScore = MINIMUM_NUMBER_OF_DEATHS + random.nextInt(DEATHS_UP_TO_FIFTY_MORE);
+        peopleDead += passedScore;
+    }
 }
