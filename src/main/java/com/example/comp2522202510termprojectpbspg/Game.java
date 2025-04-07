@@ -1,5 +1,7 @@
 package com.example.comp2522202510termprojectpbspg;
 
+import java.io.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -303,5 +305,26 @@ public class Game {
      */
     public boolean isGameOver() {
         return gameOver;
+    }
+
+    /**
+     * Saves the current game state to a file using serialization.
+     * Stores player position and score data into SaveData object.
+     *
+     * @throws RuntimeException if the game fails to save to file
+     */
+    public void saveGame() {
+        SaveData data = new SaveData();
+        data.lives = scoreBoard.getLives();
+        data.balloonsShot = scoreBoard.getBalloonsShot();
+        data.peopleDead = scoreBoard.getPeopleDead();
+        data.playerX = player.getBatwingIMG().getLayoutX();
+        data.playerY = player.getBatwingIMG().getLayoutY();
+
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(SAVE_FILE))) {
+            out.writeObject(data);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to save the game", e);
+        }
     }
 }
