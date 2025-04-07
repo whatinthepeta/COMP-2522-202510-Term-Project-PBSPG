@@ -134,4 +134,26 @@ public class Game {
     private boolean isBulletOffScreen(final Rectangle bullet){
         return bullet.getY() < ZERO;
     }
+
+    /**
+     * Checks whether a bullet intersects any balloon. If so, both are removed and score is updated.
+     *
+     * @param bullet a Rectangle
+     * @param bulletIter the iterator used to remove the bullet
+     */
+    private void checkBulletHitBalloon(final Rectangle bullet, final Iterator<Rectangle> bulletIter) {
+        Iterator<Balloon> balloonIterator = balloons.iterator();
+
+        while(balloonIterator.hasNext()) {
+            Balloon balloon = balloonIterator.next();
+            if (bullet.getBoundsInParent().intersects(balloon.getBalloonIMG().getBoundsInParent())) {
+                gamePane.getChildren().remove(bullet);
+                gamePane.getChildren().remove(balloon.getBalloonIMG());
+                bulletIter.remove();
+                balloonIterator.remove();
+                scoreBoard.balloonShot();
+                break;
+            }
+        }
+    }
 }
