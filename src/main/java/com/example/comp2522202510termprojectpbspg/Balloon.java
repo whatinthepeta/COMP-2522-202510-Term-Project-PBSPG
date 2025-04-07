@@ -121,10 +121,10 @@ public class Balloon {
     public boolean equals(Object other) {
         if (this == other) return true;
         if (!(other instanceof Balloon that)) return false;
-        return Objects.equals(that.balloonIMG, balloonIMG) &&
-                Double.compare(that.xVelocity, xVelocity) == 0 &&
-                Double.compare(that.yVelocity, yVelocity) == 0 &&
-                Double.compare(that.screenWidth, screenWidth) == 0;
+        return Objects.equals(balloonIMG, that.balloonIMG) &&
+                Double.compare(xVelocity, that.xVelocity) == Double.compare(that.xVelocity, xVelocity) &&
+                Double.compare(yVelocity, that.yVelocity) == Double.compare(that.yVelocity, yVelocity) &&
+                Double.compare(screenWidth, that.screenWidth) == Double.compare(that.screenWidth, screenWidth);
     }
 
     /**
