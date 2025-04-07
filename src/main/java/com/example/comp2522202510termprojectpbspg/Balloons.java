@@ -9,4 +9,6 @@ package com.example.comp2522202510termprojectpbspg;
 public class Balloons {
     private static final double ZERO_POINT_FIVE = 0.5;
     private static final int TWENTY = 20;
+
+    public Balloons(){}
 }
