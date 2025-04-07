@@ -18,4 +18,13 @@ public class Map {
     public Map() {
         this.map = new Image(MAP_IMAGEPATH);
     }
+
+    /**
+     * Returns the background image of the game.
+     *
+     * @return an Image representing the game map
+     */
+    public Image getMap(){
+        return map;
+    }
 }
