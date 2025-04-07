@@ -46,4 +46,16 @@ public class Batwing extends ImageView {
             }
         }
     }
+
+    /**
+     * Moves the Batwing Object to the right if it's alive and not out of bounds.
+     */
+    public void moveRight() {
+        if (alive) {
+            double newX = batwingIMG.getLayoutX() + BATWING_SPEED;
+            if (newX + batwingIMG.getFitWidth() <= gameWidth) {
+                batwingIMG.setLayoutX(newX);
+            }
+        }
+    }
 }
