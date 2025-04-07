@@ -254,4 +254,16 @@ public class Game {
     public void movePlayerRight() {
         player.moveRight();
     }
+
+    /**
+     * Checks whether the game has ended. If game has ended,
+     * sets the game state to over, deletes the save file, and displays the end message.
+     */
+    private void checkGameEnd() {
+        if (scoreBoard.isGameOver() && !gameOver) {
+            gameOver = true;
+            deleteSaveFile();
+            displayGameEndMessage();
+        }
+    }
 }
