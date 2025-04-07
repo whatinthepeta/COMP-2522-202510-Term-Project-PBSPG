@@ -49,4 +49,25 @@ public class GameController {
             }
         });
     }
+
+    /**
+     * Starts the game loop.
+     */
+    public void startGameLoop() {
+        if (isRunning) {
+            return;
+        }
+        gameLoop = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+                updatePlayerMovement();
+                game.update(now);
+                if (game.isGameOver()) {
+                    stopGameLoop();
+                }
+            }
+        };
+        gameLoop.start();
+        isRunning = true;
+    }
 }
