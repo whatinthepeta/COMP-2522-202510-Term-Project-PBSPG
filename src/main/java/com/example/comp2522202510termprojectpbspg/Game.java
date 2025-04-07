@@ -175,4 +175,14 @@ public class Game {
             checkBalloonHitBatwing(balloon, balloonIterator);
         }
     }
+
+    /**
+     * Checks if a balloon made it off the bottom of the screen.
+     *
+     * @param balloon the Balloon to check
+     * @return true if off-screen, otherwise false
+     */
+    private boolean isBalloonOffScreen(final Balloon balloon) {
+        return balloon.isOffScreen(height);
+    }
 }
