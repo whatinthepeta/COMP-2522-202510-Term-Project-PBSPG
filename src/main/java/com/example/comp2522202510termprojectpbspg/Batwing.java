@@ -1,7 +1,7 @@
 package com.example.comp2522202510termprojectpbspg;
 
 import javafx.scene.image.ImageView;
-
+import javafx.scene.shape.Rectangle;
 
 /**
  * Represents the Batwing object.
@@ -57,5 +57,20 @@ public class Batwing extends ImageView {
                 batwingIMG.setLayoutX(newX);
             }
         }
+    }
+
+    /**
+     * Creates a Rectangle object represented as a bullet at the current Batwing position if alive.
+     *
+     * @return a Rectangle representing the bullet or null if dead
+     */
+    public Rectangle shoot() {
+        if (alive) {
+            Rectangle bullet = new Rectangle(BATWING_BULLET_WIDTH, BATWING_BULLET_HEIGHT);
+            bullet.setX(batwingIMG.getLayoutX() + batwingIMG.getFitWidth() / HALF - TWO);
+            bullet.setY(batwingIMG.getLayoutY());
+            return bullet;
+        }
+        return null;
     }
 }
