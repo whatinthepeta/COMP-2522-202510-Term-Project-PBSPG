@@ -30,7 +30,7 @@ public class Batwing extends ImageView {
      *
      * @param screenWidth a double of the screen width
      */
-    public Batwing(double screenWidth) {
+    public Batwing(final double screenWidth) {
         this.batwingIMG = new ImageView(BATWING_IMAGE_PATH);
         this.gameWidth = screenWidth;
         this.batwingIMG.setFitWidth(BATWING_HEIGHT);
@@ -90,7 +90,7 @@ public class Batwing extends ImageView {
      *
      * @param respawnDelay the number of seconds to wait before respawning
      */
-    public void respawn(int respawnDelay) {
+    public void respawn(final int respawnDelay) {
         PauseTransition pause = new PauseTransition(Duration.seconds(respawnDelay));
         pause.setOnFinished((_) -> {
             alive = true;
@@ -124,7 +124,7 @@ public class Batwing extends ImageView {
      * @return true if they are equal, else false
      */
     @Override
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         if (this == other) return true;
         if (!(other instanceof Batwing that)) return false;
         return alive == that.alive &&
