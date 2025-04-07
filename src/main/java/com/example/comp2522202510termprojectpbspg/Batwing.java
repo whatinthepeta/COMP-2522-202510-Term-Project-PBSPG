@@ -3,6 +3,7 @@ package com.example.comp2522202510termprojectpbspg;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
+
 /**
  * Represents the Batwing object.
  *
@@ -72,5 +73,13 @@ public class Batwing extends ImageView {
             return bullet;
         }
         return null;
+    }
+
+    /**
+     * Marks the Batwing as dead and hides it from the view of the game.
+     */
+    public void dead() {
+        alive = false;
+        this.batwingIMG.setVisible(false);
     }
 }
