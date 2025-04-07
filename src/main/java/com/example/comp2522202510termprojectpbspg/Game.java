@@ -1,6 +1,7 @@
 package com.example.comp2522202510termprojectpbspg;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
@@ -103,6 +104,24 @@ public class Game {
             updateBalloons();
             scoreBoard.update();
             checkGameEnd();
+        }
+    }
+
+    /**
+     * Moves bullets upward, removes off-screen bullets, and checks for collisions with balloons.
+     */
+    private void updateBullets() {
+        Iterator<Rectangle> bulletIterator = bullets.iterator();
+
+        while(bulletIterator.hasNext()) {
+            Rectangle bullet = bulletIterator.next();
+            bullet.setY(bullet.getY() - BULLET_SPEED);
+
+            if (isBulletOffScreen(bullet)) {
+                gamePane.getChildren().remove(bullet);
+                bulletIterator.remove();
+            }
+            checkBulletHitBalloon(bullet, bulletIterator);
         }
     }
 }
