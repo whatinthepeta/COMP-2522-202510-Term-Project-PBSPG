@@ -70,4 +70,14 @@ public class GameController {
         gameLoop.start();
         isRunning = true;
     }
+
+    /**
+     * Stops the game loop.
+     */
+    public void stopGameLoop() {
+        if (gameLoop != null) {
+            gameLoop.stop();
+            isRunning = false;
+        }
+    }
 }
