@@ -1,6 +1,7 @@
 package com.example.comp2522202510termprojectpbspg;
 
 import java.util.Random;
+import javafx.scene.image.ImageView;
 
 /**
  * Represents a Balloon object.
@@ -17,4 +18,9 @@ public class Balloon {
     private static final int TWO = 2;
     private static final int ZERO = 0;
     private static final Random random = new Random();
+    private final ImageView balloonIMG;
+    private double xVelocity;
+    private final double yVelocity;
+    private final double screenWidth;
+
 }
