@@ -1,20 +1,21 @@
 package com.example.comp2522202510termprojectpbspg;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Batwing extends LiveObject {
-    private static final ImageView batwingIMG = new ImageView("Images/BatwingIMG.png");
-    private static final int PLAYER_WIDTH = 40;
-    private static final int PLAYER_HEIGHT = 20;
-    private static final int LEVEL_1 = 25;
-    private static final int LEVEL_2 = 50;
-    private static final int LEVEL_3 = 75;
-    private static final int LEVEL_4 = 100;
-    private int level;
-    private int poppedBalloons;
 
+/**
+ * Represents the Batwing object.
+ *
+ * @author Peter Beretanos
+ * @version 2025
+ */
+public class Batwing extends ImageView {
+    private static final int BATWING_HEIGHT = 80;
+    private static final int BATWING_WIDTH = 40;
+    private static final String BATWING_IMAGE_PATH = "/images/BatwingIMG.png";
+    private static final int BATWING_SPEED = 5;
+    private static final int TWO = 2;
+    private static final int HALF = 2;
+    private static final int BATWING_BULLET_WIDTH = 4;
+    private static final int BATWING_BULLET_HEIGHT = 10;
 }
-
-
-// B
