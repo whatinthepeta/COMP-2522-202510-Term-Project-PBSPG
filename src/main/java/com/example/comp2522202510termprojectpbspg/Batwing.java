@@ -2,6 +2,7 @@ package com.example.comp2522202510termprojectpbspg;
 
 import javafx.scene.image.ImageView;
 
+
 /**
  * Represents the Batwing object.
  *
@@ -34,4 +35,15 @@ public class Batwing extends ImageView {
         this.alive = true;
     }
 
+    /**
+     * Moves the Batwing Object to the left if it's alive and not out of bounds.
+     */
+    public void moveLeft() {
+        if (alive) {
+            double newX = batwingIMG.getLayoutX() - BATWING_SPEED;
+            if (newX >= 0) {
+                this.batwingIMG.setLayoutX(newX);
+            }
+        }
+    }
 }
