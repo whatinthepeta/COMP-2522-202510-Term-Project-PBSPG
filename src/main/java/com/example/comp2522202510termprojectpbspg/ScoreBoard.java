@@ -1,5 +1,6 @@
 package com.example.comp2522202510termprojectpbspg;
 
+import java.util.Objects;
 import java.util.Random;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -186,5 +187,15 @@ public class ScoreBoard {
                 balloonsShot == that.balloonsShot &&
                 peopleDead == that.peopleDead &&
                 (scoreBoard == null ? that.scoreBoard == null : scoreBoard.getText().equals(that.scoreBoard.getText()));
+    }
+
+    /**
+     * Returns a hashcode of type ScoreBoard.
+     *
+     * @return a hashcode of type ScoreBoard
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(lives, balloonsShot, peopleDead, scoreBoard);
     }
 }
