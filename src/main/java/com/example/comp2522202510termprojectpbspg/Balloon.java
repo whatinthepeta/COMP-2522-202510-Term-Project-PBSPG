@@ -53,6 +53,16 @@ public class Balloon {
         if (balloonIMG.getLayoutX() <= ZERO || balloonIMG.getLayoutX() + balloonIMG.getFitWidth() >= screenWidth) {
             xVelocity = -xVelocity;
         }
+
     }
 
+    /**
+     * Checks if a Balloon object has moved off the bottom of the screen.
+     *
+     * @param screenHeight a double representing the height of the screen
+     * @return true if the balloon is below the screen height, false otherwise
+     */
+    public boolean isOffScreen(double screenHeight) {
+        return balloonIMG.getLayoutY() > screenHeight;
+    }
 }
