@@ -155,5 +155,24 @@ public class Game {
                 break;
             }
         }
+
+    }
+
+    /**
+     * Updates the position of balloons, removes off-screen ones, and checks for collisions with the player.
+     */
+    private void updateBalloons() {
+        Iterator<Balloon> balloonIterator = balloons.iterator();
+
+        while(balloonIterator.hasNext()) {
+            Balloon balloon = balloonIterator.next();
+            balloon.update();
+            if (isBalloonOffScreen(balloon)) {
+                gamePane.getChildren().remove(balloon.getBalloonIMG());
+                balloonIterator.remove();
+                scoreBoard.balloonPassed();
+            }
+            checkBalloonHitBatwing(balloon, balloonIterator);
+        }
     }
 }
