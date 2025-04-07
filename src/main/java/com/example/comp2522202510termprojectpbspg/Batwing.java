@@ -5,6 +5,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
+import java.util.Objects;
+
 /**
  * Represents the Batwing object.
  *
@@ -105,5 +107,14 @@ public class Batwing extends ImageView {
      */
     public ImageView getBatwingIMG() {
         return this.batwingIMG;
+    }
+
+    /**
+     * Returns whether the Batwing is currently alive.
+     *
+     * @return true if alive, false otherwise
+     */
+    public boolean isAlive(){
+        return alive;
     }
 }
