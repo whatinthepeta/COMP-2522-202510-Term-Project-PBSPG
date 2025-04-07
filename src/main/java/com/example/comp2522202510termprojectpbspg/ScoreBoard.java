@@ -1,6 +1,7 @@
 package com.example.comp2522202510termprojectpbspg;
 
 import java.util.Random;
+import javafx.scene.text.Text;
 
 public class ScoreBoard {
     private static final int PLAYER_STARTING_LIVES = 3;
@@ -13,5 +14,9 @@ public class ScoreBoard {
     private static final int MINIMUM_NUMBER_OF_DEATHS = 50;
     private static final int DEATHS_UP_TO_FIFTY_MORE = 51;
     private static final Random random = new Random();
+    private int lives;
+    private int balloonsShot;
+    private int peopleDead;
+    private final Text scoreBoard;
 
 }
