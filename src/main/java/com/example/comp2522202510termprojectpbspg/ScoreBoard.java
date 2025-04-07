@@ -82,4 +82,13 @@ public class ScoreBoard {
     public int getPeopleDead() {
         return peopleDead;
     }
+
+    /**
+     * Returns the current number of balloons shot down from the Batwing.
+     *
+     * @return an int of the number of balloons shot down
+     */
+    public int getBalloonsShot() {
+        return balloonsShot;
+    }
 }
