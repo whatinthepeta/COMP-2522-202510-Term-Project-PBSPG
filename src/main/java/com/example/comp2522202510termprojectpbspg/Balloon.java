@@ -43,4 +43,16 @@ public class Balloon {
         this.yVelocity = ONE + random.nextDouble() * TWO;
     }
 
+    /**
+     * Updates a Balloon objects position based on its x and y velocity.
+     * Reverses horizontal direction if the balloon hits the game area boundaries.
+     */
+    public void update() {
+        balloonIMG.setLayoutX(balloonIMG.getLayoutX() + xVelocity);
+        balloonIMG.setLayoutY(balloonIMG.getLayoutY() + yVelocity);
+        if (balloonIMG.getLayoutX() <= ZERO || balloonIMG.getLayoutX() + balloonIMG.getFitWidth() >= screenWidth) {
+            xVelocity = -xVelocity;
+        }
+    }
+
 }
