@@ -286,4 +286,13 @@ public class Game {
 
         gamePane.getChildren().add(message);
     }
+
+    /**
+     * Returns the pane containing all game elements.
+     *
+     * @return the game pane
+     */
+    public Pane getGamePane() {
+        return gamePane;
+    }
 }
