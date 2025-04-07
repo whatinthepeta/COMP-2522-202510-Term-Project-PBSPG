@@ -1,6 +1,8 @@
 package com.example.comp2522202510termprojectpbspg;
 
 import java.util.Random;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class ScoreBoard {
@@ -19,4 +21,16 @@ public class ScoreBoard {
     private int peopleDead;
     private final Text scoreBoard;
 
+    /**
+     * Constructs a ScoreBoard object with default starting values and initializes
+     * the display text with default position, color, and font.
+     */
+    public ScoreBoard() {
+        this.lives = PLAYER_STARTING_LIVES;
+        this.balloonsShot = ZERO;
+        this.peopleDead = ZERO;
+        this.scoreBoard = new Text(SCOREBOARD_TEXT_X, SCOREBOARD_TEXT_Y, "");
+        this.scoreBoard.setFill(Color.WHITE);
+        this.scoreBoard.setFont(Font.font(SCOREBOARD_FONT_SIZE));
+    }
 }
