@@ -65,4 +65,23 @@ public class Balloon {
     public boolean isOffScreen(double screenHeight) {
         return balloonIMG.getLayoutY() > screenHeight;
     }
+
+    /**
+     * Returns a random balloon image path from the available 5 image paths.
+     * Used for when constructing random balloon images.
+     *
+     * @return a String containing the randomly selected file path
+     */
+    protected static String getRandomBalloonIMG() {
+        String[] balloonFilePaths = {
+                "images/jokerBalloonIMG.png",
+                "images/babyBalloonIMG.png",
+                "images/heartBalloonIMG.png",
+                "images/octopusBalloonIMG.png",
+                "images/catBalloonIMG.png"
+        };
+        int randomIndex = random.nextInt(balloonFilePaths.length);
+        return balloonFilePaths[randomIndex];
+    }
+
 }
