@@ -132,4 +132,14 @@ public class Batwing extends ImageView {
                 alive == that.alive &&
                 Double.compare(that.gameWidth, gameWidth) == 0;
     }
+
+    /**
+     * Returns a hashcode of type Batwing.
+     *
+     * @return a hashcode of type Batwing
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(batwingIMG, alive, gameWidth);
+    }
 }
