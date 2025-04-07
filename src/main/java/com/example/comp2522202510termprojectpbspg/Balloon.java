@@ -136,4 +136,15 @@ public class Balloon {
     public int hashCode() {
         return Objects.hash(balloonIMG, xVelocity, yVelocity, screenWidth);
     }
+
+    /**
+     * Returns a String of this Balloon.
+     *
+     * @return a String of this Balloon
+     */
+    @Override
+    public String toString() {
+        return "Balloon{balloonIMG='" + balloonIMG + "', xVelocity='" + xVelocity +
+                "', yVelocity=" + yVelocity + ", screenWidth=" + screenWidth +"}";
+    }
 }
