@@ -189,7 +189,7 @@ public class Game {
     /**
      * Checks if a balloon hits the Batwing. If so, the player loses a life and the Batwing may respawn.
      *
-     * @param balloon the {@code Balloon} being checked
+     * @param balloon the Balloon being checked
      * @param balloonIterator the iterator used to remove the balloon safely
      */
     private void checkBalloonHitBatwing(final Balloon balloon, final Iterator<Balloon> balloonIterator) {
