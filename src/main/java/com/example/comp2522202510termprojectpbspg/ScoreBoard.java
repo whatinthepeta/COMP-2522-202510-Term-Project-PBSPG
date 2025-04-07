@@ -57,4 +57,11 @@ public class ScoreBoard {
         int passedScore = MINIMUM_NUMBER_OF_DEATHS + random.nextInt(DEATHS_UP_TO_FIFTY_MORE);
         peopleDead += passedScore;
     }
+
+    /**
+     * Decreases the Batwing life count by one.
+     */
+    public void loseLife() {
+        lives--;
+    }
 }
