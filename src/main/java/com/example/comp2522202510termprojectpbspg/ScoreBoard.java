@@ -1,4 +1,17 @@
 package com.example.comp2522202510termprojectpbspg;
 
+import java.util.Random;
+
 public class ScoreBoard {
+    private static final int PLAYER_STARTING_LIVES = 3;
+    private static final int ZERO = 0;
+    private static final int WIN_BALLOONS_SHOT = 100;
+    private static final int LOSE_BALLOONS_PASSED = 1000;
+    private static final double SCOREBOARD_TEXT_X = 10.0;
+    private static final double SCOREBOARD_TEXT_Y = 20.0;
+    private static final double SCOREBOARD_FONT_SIZE = 14.0;
+    private static final int MINIMUM_NUMBER_OF_DEATHS = 50;
+    private static final int DEATHS_UP_TO_FIFTY_MORE = 51;
+    private static final Random random = new Random();
+
 }
