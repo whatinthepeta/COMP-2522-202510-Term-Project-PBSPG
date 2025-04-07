@@ -146,4 +146,19 @@ public class ScoreBoard {
     public boolean isGameOver() {
         return hasWon() || hasLost();
     }
+
+    /**
+     * Determines the reason the game ended.
+     *
+     * @return a GameEndReason indicating win, loss, or ongoing game
+     */
+    public GameEndReason getGameEndReason() {
+        if (this.hasWon()) {
+            return GameEndReason.VICTORY;
+        } else if (this.lives <= ZERO) {
+            return GameEndReason.NO_LIVES;
+        } else {
+            return this.peopleDead >= LOSE_BALLOONS_PASSED ? GameEndReason.TOO_MANY_PASSED : GameEndReason.GAME_ACTIVE;
+        }
+    }
 }
