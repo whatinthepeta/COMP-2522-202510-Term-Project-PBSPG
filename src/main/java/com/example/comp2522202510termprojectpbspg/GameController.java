@@ -30,7 +30,7 @@ public class GameController {
      *
      * @param scene a Scene to handle input
      */
-    public void setupInput(Scene scene) {
+    public void setupInput(final Scene scene) {
         scene.setOnKeyPressed((e) -> {
             pressedKeys.add(e.getCode());
             if (e.getCode() == KeyCode.SPACE) {
