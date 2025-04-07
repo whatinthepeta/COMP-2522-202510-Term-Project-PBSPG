@@ -1,8 +1,9 @@
 package com.example.comp2522202510termprojectpbspg;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
-
+import javafx.util.Duration;
 
 /**
  * Represents the Batwing object.
@@ -81,5 +82,19 @@ public class Batwing extends ImageView {
     public void dead() {
         alive = false;
         this.batwingIMG.setVisible(false);
+    }
+
+    /**
+     * Respawns the Batwing after a specified delay in seconds.
+     *
+     * @param respawnDelay the number of seconds to wait before respawning
+     */
+    public void respawn(int respawnDelay) {
+        PauseTransition pause = new PauseTransition(Duration.seconds(respawnDelay));
+        pause.setOnFinished((_) -> {
+            alive = true;
+            batwingIMG.setVisible(true);
+        });
+        pause.play();
     }
 }
