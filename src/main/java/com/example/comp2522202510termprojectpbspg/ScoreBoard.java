@@ -33,4 +33,12 @@ public class ScoreBoard {
         this.scoreBoard.setFill(Color.WHITE);
         this.scoreBoard.setFont(Font.font(SCOREBOARD_FONT_SIZE));
     }
+
+    /**
+     * Updates the scoreboard text with current lives, balloons shot, and people killed.
+     */
+    public void update() {
+        scoreBoard.setText("Lives: " + lives + "\nBalloons: " +
+                balloonsShot + "\nPeople Killed: " + peopleDead);
+    }
 }
