@@ -18,4 +18,8 @@ public class Batwing extends ImageView {
     private static final int HALF = 2;
     private static final int BATWING_BULLET_WIDTH = 4;
     private static final int BATWING_BULLET_HEIGHT = 10;
+    private final ImageView batwingIMG;
+    private boolean alive;
+    private final double gameWidth;
+
 }
