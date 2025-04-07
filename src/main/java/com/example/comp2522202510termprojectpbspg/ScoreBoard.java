@@ -100,4 +100,13 @@ public class ScoreBoard {
     public void setLives(int lives) {
         this.lives = lives;
     }
+
+    /**
+     * Sets the number of dead people.
+     *
+     * @param peopleDead the number of people dead being set
+     */
+    public void setPeopleDead(int peopleDead) {
+        this.peopleDead = peopleDead;
+    }
 }
