@@ -6,6 +6,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+/**
+ * Represents a Scoreboard.
+ *
+ * @author Peter Beretanos
+ * @version 2025
+ */
 public class ScoreBoard {
     private static final int PLAYER_STARTING_LIVES = 3;
     private static final int ZERO = 0;
