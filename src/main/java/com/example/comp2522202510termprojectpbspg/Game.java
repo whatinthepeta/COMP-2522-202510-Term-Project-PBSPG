@@ -12,6 +12,8 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 /**
  * Represents the Game Object.
@@ -265,5 +267,23 @@ public class Game {
             deleteSaveFile();
             displayGameEndMessage();
         }
+    }
+
+    /**
+     * Displays a message in the center of the screen indicating whether the
+     * player has won or lost the game.
+     */
+    private void displayGameEndMessage() {
+        GameEndReason reason = scoreBoard.getGameEndReason();
+        double centerX = (width / HALF) - ONE_HUNDRED_TWENTY_FIVE;
+        double centerY = height / HALF;
+
+        Text message = new Text(reason == GameEndReason.VICTORY ? "YOU WIN!" : "GAME OVER!");
+        message.setFill(reason == GameEndReason.VICTORY ? Color.GREEN : Color.RED);
+        message.setFont(Font.font(ENDING_MESSAGE_FONT_SIZE));
+        message.setX(centerX);
+        message.setY(centerY);
+
+        gamePane.getChildren().add(message);
     }
 }
