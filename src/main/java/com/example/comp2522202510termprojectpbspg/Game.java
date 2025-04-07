@@ -240,4 +240,11 @@ public class Game {
             canShoot = true;
         }
     }
+
+    /**
+     * Moves the Batwing to the left.
+     */
+    public void movePlayerLeft() {
+        player.moveLeft();
+    }
 }
