@@ -170,4 +170,21 @@ public class ScoreBoard {
     public Text getScoreBoard(){
         return scoreBoard;
     }
+
+    /**
+     * Determines if two ScoreBoard objects are equal.
+     *
+     * @param other an object
+     * @return true if they are equal, else false
+     */
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        ScoreBoard that = (ScoreBoard) other;
+        return lives == that.lives &&
+                balloonsShot == that.balloonsShot &&
+                peopleDead == that.peopleDead &&
+                (scoreBoard == null ? that.scoreBoard == null : scoreBoard.getText().equals(that.scoreBoard.getText()));
+    }
 }
