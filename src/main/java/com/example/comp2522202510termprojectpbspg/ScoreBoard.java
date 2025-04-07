@@ -137,4 +137,13 @@ public class ScoreBoard {
     public boolean hasLost() {
         return lives <= ZERO || peopleDead >= LOSE_BALLOONS_PASSED;
     }
+
+    /**
+     * Determines if the game is over by a win or loss condition.
+     *
+     * @return true if the game is either won or lost
+     */
+    public boolean isGameOver() {
+        return hasWon() || hasLost();
+    }
 }
