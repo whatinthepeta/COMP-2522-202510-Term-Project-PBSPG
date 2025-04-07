@@ -119,4 +119,12 @@ public class ScoreBoard {
         this.balloonsShot = balloonsShot;
     }
 
+    /**
+     * Determines if the player has won the game by shooting enough balloons.
+     *
+     * @return {@code true} if the player has shot at least 100 balloons
+     */
+    public boolean hasWon() {
+        return balloonsShot >= WIN_BALLOONS_SHOT;
+    }
 }
