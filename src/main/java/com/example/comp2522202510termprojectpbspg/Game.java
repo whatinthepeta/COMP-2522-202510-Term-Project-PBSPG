@@ -1,6 +1,7 @@
 package com.example.comp2522202510termprojectpbspg;
 
 import java.io.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -325,6 +326,28 @@ public class Game {
             out.writeObject(data);
         } catch (IOException e) {
             throw new RuntimeException("Failed to save the game", e);
+        }
+    }
+
+    /**
+     * Loads the game state from a file using serialization.
+     * Restores player position and score data from SaveData object.
+     *
+     * @throws RuntimeException if the game fails to load from the file
+     */
+    public void loadGame() {
+        File file = new File(SAVE_FILE);
+        if (!file.exists()) return;
+
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
+            SaveData data = (SaveData) in.readObject();
+            scoreBoard.setLives(data.lives);
+            scoreBoard.setBalloonsShot(data.balloonsShot);
+            scoreBoard.setPeopleDead(data.peopleDead);
+            player.getBatwingIMG().setLayoutX(data.playerX);
+            player.getBatwingIMG().setLayoutY(data.playerY);
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException("Failed to load from file", e);
         }
     }
 }
