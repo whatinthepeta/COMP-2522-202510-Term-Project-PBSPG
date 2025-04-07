@@ -2,7 +2,6 @@ package com.example.comp2522202510termprojectpbspg;
 
 import javafx.scene.image.ImageView;
 
-
 /**
  * Represents the Batwing object.
  *
@@ -21,5 +20,18 @@ public class Batwing extends ImageView {
     private final ImageView batwingIMG;
     private boolean alive;
     private final double gameWidth;
+
+    /**
+     * Constructs a Batwing object.
+     *
+     * @param screenWidth a double of the screen width
+     */
+    public Batwing(double screenWidth) {
+        this.batwingIMG = new ImageView(BATWING_IMAGE_PATH);
+        this.gameWidth = screenWidth;
+        this.batwingIMG.setFitWidth(BATWING_HEIGHT);
+        this.batwingIMG.setFitHeight(BATWING_WIDTH);
+        this.alive = true;
+    }
 
 }
