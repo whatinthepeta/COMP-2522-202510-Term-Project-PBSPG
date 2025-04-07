@@ -10,6 +10,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -216,6 +217,27 @@ public class Game {
         for(Balloon balloon : newRow) {
             balloons.add(balloon);
             gamePane.getChildren().add(balloon.getBalloonIMG());
+        }
+    }
+
+    /**
+     * Handles shooting logic for the Batwing.
+     * If shooting is triggered and allowed,a bullet is created and added to the game.
+     * Prevents continuous fire by toggling `canShoot`.
+     *
+     * @param shoot true if the shoot key is being pressed, false if released
+     */
+    public void shootHandling(final boolean shoot) {
+        if (shoot && canShoot && player.isAlive()) {
+            Rectangle bullet = player.shoot();
+            if (bullet != null) {
+                bullet.setFill(Color.YELLOW);
+                bullets.add(bullet);
+                gamePane.getChildren().add(bullet);
+                canShoot = false;
+            }
+        } else if (!shoot) {
+            canShoot = true;
         }
     }
 }
