@@ -124,4 +124,14 @@ public class Game {
             checkBulletHitBalloon(bullet, bulletIterator);
         }
     }
+
+    /**
+     * Checks if a bullet has moved off the top of the screen.
+     *
+     * @param bullet a Rectangle
+     * @return true if off-screen, otherwise false
+     */
+    private boolean isBulletOffScreen(final Rectangle bullet){
+        return bullet.getY() < ZERO;
+    }
 }
