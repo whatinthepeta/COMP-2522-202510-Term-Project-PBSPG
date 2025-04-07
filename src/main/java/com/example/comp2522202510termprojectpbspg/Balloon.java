@@ -93,4 +93,13 @@ public class Balloon {
         return balloonIMG;
     }
 
+    /**
+     * Sets the X position of the balloon on the game pane.
+     *
+     * @param x the X-coordinate to place the balloon
+     */
+    public void setBalloonX(double x){
+        balloonIMG.setLayoutX(x);
+    }
+
 }
