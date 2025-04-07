@@ -91,4 +91,13 @@ public class ScoreBoard {
     public int getBalloonsShot() {
         return balloonsShot;
     }
+
+    /**
+     * Sets the number of lives the player has.
+     *
+     * @param lives the number of lives being set
+     */
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
 }
