@@ -350,4 +350,20 @@ public class Game {
             throw new RuntimeException("Failed to load from file", e);
         }
     }
+
+    /**
+     * Deletes the saved file. Called when the game ends to
+     * ensure a new start on the next launch.
+     *
+     * @throws IllegalStateException if the file cannot be deleted
+     */
+    private void deleteSaveFile() {
+        File file = new File(SAVE_FILE);
+        if (file.exists()) {
+            boolean deleted = file.delete();
+            if (!deleted) {
+                throw new IllegalStateException("Failed to delete file: " + SAVE_FILE);
+            }
+        }
+    }
 }
