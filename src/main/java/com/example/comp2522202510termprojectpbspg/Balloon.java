@@ -111,4 +111,20 @@ public class Balloon {
         balloonIMG.setLayoutY(y);
     }
 
+    /**
+     * Determines if two Balloon objects are equal.
+     *
+     * @param other an object
+     * @return true if they are equal, else false
+     */
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (!(other instanceof Balloon that)) return false;
+        return Objects.equals(that.balloonIMG, balloonIMG) &&
+                Double.compare(that.xVelocity, xVelocity) == 0 &&
+                Double.compare(that.yVelocity, yVelocity) == 0 &&
+                Double.compare(that.screenWidth, screenWidth) == 0;
+    }
+
 }
