@@ -1,5 +1,9 @@
 package com.example.comp2522202510termprojectpbspg;
 
+import java.util.List;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
+
 /**
  * Represents the Game Object.
  *
@@ -20,5 +24,14 @@ public class Game {
     private static final int NUMBER_OF_BALLOON_ARMY = 6;
     private static final int ONE_HUNDRED_TWENTY_FIVE = 125;
     private static final String SAVE_FILE = "savegame.ser";
-
+    private final Pane gamePane;
+    private final Batwing player;
+    private final List<Balloon> balloons;
+    private final List<Rectangle> bullets;
+    private final ScoreBoard scoreBoard;
+    private final double width;
+    private final double height;
+    private boolean canShoot;
+    private boolean gameOver;
+    private long lastBalloonCreationTime;
 }
