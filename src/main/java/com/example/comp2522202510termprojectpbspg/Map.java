@@ -11,5 +11,11 @@ import javafx.scene.image.Image;
 public class Map {
     private static final String MAP_IMAGEPATH = "/images/cityIMG.png";
     private final Image map;
+
+    /**
+     * Constructs a Map object with an image file path.
+     */
+    public Map() {
+        this.map = new Image(MAP_IMAGEPATH);
     }
 }
