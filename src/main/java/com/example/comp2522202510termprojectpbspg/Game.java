@@ -2,6 +2,12 @@ package com.example.comp2522202510termprojectpbspg;
 
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
@@ -63,5 +69,22 @@ public class Game {
         this.scoreBoard = new ScoreBoard();
         gamePane.getChildren().add(this.player.getBatwingIMG());
         gamePane.getChildren().add(scoreBoard.getScoreBoard());
+    }
+
+    /**
+     * Constructs the background of the game pane using the Map object.
+     *
+     * @param map the Map object containing the background image
+     */
+    private void constructMap(final Map map) {
+        Image mapFinal = map.getMap();
+        BackgroundImage fixBackgroundSize = new BackgroundImage(
+                mapFinal,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                new BackgroundSize(BACKGROUND_HEIGHT, BACKGROUND_WIDTH, true, true, true, true)
+        );
+        gamePane.setBackground(new Background(fixBackgroundSize));
     }
 }
